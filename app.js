@@ -1,7 +1,7 @@
 // remoteStorage module
 const crud = {
   name: 'crud',
-  builder: function (privateClient) {
+  builder (privateClient) {
     privateClient.declareType('crud-item', {
       type: 'object',
       properties: {
@@ -16,7 +16,7 @@ const crud = {
 
         handle: privateClient.on,
 
-        addItem: (object) => privateClient.storeObject('crud-item', new Date().toJSON().replace(/\D/g, ''), object),
+        addItem: object => privateClient.storeObject('crud-item', new Date().toJSON().replace(/\D/g, ''), object),
 
         updateItem: (id, object) => privateClient.storeObject('crud-item', id, object),
 
@@ -117,7 +117,7 @@ const view = {
     });
   },
 
-  unrenderItem: (id) => document.querySelector('ul').removeChild(view._li(id)),
+  unrenderItem: id => document.querySelector('ul').removeChild(view._li(id)),
 
   emptyItems () {
     document.querySelector('ul').innerHTML = '';
