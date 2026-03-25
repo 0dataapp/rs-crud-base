@@ -23,9 +23,9 @@ const crud = {
         removeItem: privateClient.remove.bind(privateClient),
 
         getAllItems: () => privateClient.getAll('', false),
-      }
-    }
-  }
+      },
+    };
+  },
 };
 
 // remoteStorage api
